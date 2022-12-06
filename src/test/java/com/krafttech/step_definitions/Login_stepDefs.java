@@ -26,6 +26,11 @@ public class Login_stepDefs {
 
     @When("The user enters Aegon Targaryen credentials")
     public void theUserEntersAegonTargaryenCredentials() {
-        System.out.println("I enter username and password and click login button");
+        System.out.println("I enter Aegon Targaryen and password and click login button");
+    }
+
+    @When("The user enters Rosa credentials")
+    public void theUserEntersRosaCredentials() {
+        System.out.println("I enter Rosa and password and click login button");
     }
 }
