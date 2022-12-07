@@ -7,10 +7,12 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+
+        plugin = {"json:target/cucumber.json"},
         features = "src/test/resources/features",
         glue = "com/krafttech/step_definitions",
-        dryRun =false,
-        tags ="@Mike and @smoke or @GOT"          //tags sadece yazdığımız senaryoyu calıştırır.
+        dryRun =false,                            // true dersek hatalı stepleri bize verir.
+        tags ="@wip"                              //tags sadece yazdığımız senaryoyu calıştırır.
                                                    // and - or - not yaparak coğaltabiliriz..
 
 )

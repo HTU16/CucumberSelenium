@@ -1,18 +1,30 @@
 package com.krafttech.step_definitions;
 
+import com.krafttech.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 
 public class Hooks {
     @Before    //cucumber.java olacak.
     public void setUp(){
         System.out.println("\tThis is coming from Before Method");
     }
-                                                   // her bir senaryonun öncesinde ve sonrasında calışır..
-    @After                                         // test başarısız olsa bile before after çalışır.
-    public void tearDown(){
+
+                                             // her bir senaryonun öncesinde ve sonrasında calışır..
+                                             // test başarısız olsa bile before after çalışır.
+    @After
+    public void tearDown(Scenario scenario){
         System.out.println("\tThis is coming from After Method");
 
+        if(scenario.isFailed()){           // hatalı olan senaryoları screenshot olarak bize verir.
+            final byte[] screenshot = ((TakesScreenshot) Driver.get()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenshot,"image/png","screenshot");
+        }
+
+        Driver.closeDriver();
     }
 
     @Before("@GOT")
