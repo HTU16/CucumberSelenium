@@ -7,10 +7,15 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
+import java.util.concurrent.TimeUnit;
+
 public class Hooks {
     @Before    //cucumber.java olacak.
     public void setUp(){
         System.out.println("\tThis is coming from Before Method");
+
+        Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        Driver.get().manage().window().maximize();
     }
 
                                              // her bir senaryonun öncesinde ve sonrasında calışır..
