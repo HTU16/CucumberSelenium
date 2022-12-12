@@ -14,8 +14,8 @@ public class Hooks {
     public void setUp(){
         System.out.println("\tThis is coming from Before Method");
 
-        Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        Driver.get().manage().window().maximize();
+//        Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//        Driver.get().manage().window().maximize();
     }
 
                                              // her bir senaryonun öncesinde ve sonrasında calışır..

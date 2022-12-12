@@ -31,7 +31,7 @@ Feature: Krafttech Log in Test
     When User should input "user22@test.com" and "Test123456"
     Then User should be on home page
 
-    @wip
+
   Scenario: Login as a given user
     Given User should be on the login page
     Then User should input following credentials

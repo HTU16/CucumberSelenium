@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
 
         plugin = {"json:target/cucumber.json",     // rapor almamızı sağlar. xml ile birlikte
-        "html:target/default-html-reports"},           // 2.yol rapor alma, verify yapmaya gerek kalmamış olur.
+        "html:target/default-html-reports.html"},           // 2.yol rapor alma, verify yapmaya gerek kalmamış olur.
         features = "src/test/resources/features",
         glue = "com/krafttech/step_definitions",
         dryRun =false,                            // true dersek tanımlanmamış stepleri bize verir.
