@@ -39,3 +39,17 @@ Feature: Krafttech Log in Test
       | email    | user22@test.com |
       | password | Test123456      |
       | Name     | User22          |
+
+  Scenario Outline: Data table and scenario outline
+    Then User should input following credentials
+
+      | email    | <userEmail> |
+      | password | <password>  |
+      | Name     | <name>      |
+
+    Examples:
+      | userEmail                | password       | name                |
+      | user22@test.com          | Test123456     | User22              |
+      | eddiem@kraft.com         | eddiem12       | Eddie Murphy        |
+      | morganfreeman@kraft.com  | mfreeman       | Morgan Freeman      |
+      | AegonTargaryen@gmail.com | AegonTargaryen | Aegon Targaryen HTU |

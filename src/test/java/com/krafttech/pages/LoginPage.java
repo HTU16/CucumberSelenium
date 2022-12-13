@@ -3,6 +3,7 @@ package com.krafttech.pages;
 
 import com.krafttech.utilities.ConfigurationReader;
 import com.krafttech.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -47,6 +48,9 @@ public class LoginPage extends BasePage {
         passwordInput_loc.sendKeys(passWord);
         submitButton_loc.click();
 
+    }
 
+    public String warning(String message){
+        return Driver.get().findElement(By.xpath("//*[contains(text(),'"+message+"')]")).getText();
     }
 }

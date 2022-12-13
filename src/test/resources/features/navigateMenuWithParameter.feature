@@ -1,7 +1,7 @@
 Feature: Navigate to menu with parameter
 
-  @rerun1
-  Scenario: Harun navigates to edit profile mneu
+  @rerun
+  Scenario: Aegon navigates to edit profile menu
     Given User should be on the login page
     When User should input "AegonTargaryen@gmail.com" and "AegonTargaryen"
     Then The user name should be "Aegon Targaryen HTU"
