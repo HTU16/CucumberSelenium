@@ -5,7 +5,7 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-@RunWith(Cucumber.class)
+@RunWith(Cucumber.class)               //MAVEN: framwork oluşturmak, proje oluşturmak, verify etmek, testleri çalıştırmak, rapor almak için kulllanılır.
 @CucumberOptions(
 
         plugin = {"json:target/cucumber.json",     // rapor almamızı sağlar. xml ile birlikte
