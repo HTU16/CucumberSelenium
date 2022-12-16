@@ -1,3 +1,4 @@
+
 package com.krafttech.utilities;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -166,4 +167,3 @@ public class Driver {
         driverPool.remove();
     }
 }  */
-
