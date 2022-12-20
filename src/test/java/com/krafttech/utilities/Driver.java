@@ -158,6 +158,28 @@ public class Driver {
                     driverPool.set(new SafariDriver());
                     break;
             }
+
+            case "remote_chrome":
+                    ChromeOptions chromeOptions = new ChromeOptions();
+                    chromeOptions.setCapability("platform",Platform.ANY);
+
+                    try{
+                        driverPool.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),chromeOptions));
+                    }catch (MalformedURLException e){
+                        e.printStackTrace();
+                    }
+
+                    break;
+                case "remote_firefox":
+                    FirefoxOptions firefoxOptions = new FirefoxOptions();
+                    firefoxOptions.setCapability("platform",Platform.ANY);
+
+                    try{
+                        driverPool.set(new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),firefoxOptions));
+                    }catch (MalformedURLException e){
+                        e.printStackTrace();
+                    }
+                    break;
         }
         return driverPool.get();
     }
